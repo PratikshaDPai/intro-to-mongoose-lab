@@ -39,15 +39,29 @@ async function run() {
       }
       case "2": {
         const customers = await Customer.find({});
-        console.log(customers);
+
+        console.log("\nBelow is a list of customers:\n");
+        for (const customer of customers) {
+          console.log(
+            `id: ${customer._id.toString()} -- Name: ${customer.name}, Age: ${
+              customer.age
+            }`
+          );
+        }
+        console.log(); // add an extra newline for formatting
+
         break;
       }
       case "3": {
-        // TODO: implement update a customer
+        const id = prompt({ ask: "Enter the ID: " });
+        const newName = prompt({ ask: "Enter the new name: " });
+        const newAge = parseInt(prompt({ ask: "Enter the new age: " }));
+        await Customer.findByIdAndUpdate(id, { name: newName, age: newAge });
         break;
       }
       case "4": {
-        // TODO: implement delete a customer
+        const id = prompt({ ask: "Enter the id: " });
+        await Customer.findByIdAndDelete(id);
         break;
       }
       case "5": {
