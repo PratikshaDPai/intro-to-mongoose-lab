@@ -65,6 +65,7 @@ async function run() {
         break;
       }
       case "5": {
+        console.log("exiting...");
         isRunning = false;
         break;
       }
