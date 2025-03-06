@@ -31,8 +31,8 @@ async function run() {
 
     switch (selection) {
       case "1": {
-        const name = prompt({ ask: "Enter the name: " });
-        const age = parseInt(prompt({ ask: "Enter the age: " }));
+        const name = prompt({ ask: "What is the customer's name? " });
+        const age = parseInt(prompt({ ask: "What is the customer's age? " }));
         const customer = new Customer({ name, age });
         await customer.save();
         break;
@@ -53,14 +53,20 @@ async function run() {
         break;
       }
       case "3": {
-        const id = prompt({ ask: "Enter the ID: " });
-        const newName = prompt({ ask: "Enter the new name: " });
-        const newAge = parseInt(prompt({ ask: "Enter the new age: " }));
+        const id = prompt({
+          ask: "Copy and paste the id of the customer you would like to update here: ",
+        });
+        const newName = prompt({ ask: "What is the customer's new name? " });
+        const newAge = parseInt(
+          prompt({ ask: "What is the customer's new age? " })
+        );
         await Customer.findByIdAndUpdate(id, { name: newName, age: newAge });
         break;
       }
       case "4": {
-        const id = prompt({ ask: "Enter the id: " });
+        const id = prompt({
+          ask: "Copy and paste the id of the customer you would like to update here: ",
+        });
         await Customer.findByIdAndDelete(id);
         break;
       }
