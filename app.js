@@ -2,7 +2,7 @@ require("dotenv").config(); //include .env variables
 
 const prompt = require("prompt-sync")();
 const mongoose = require("mongoose");
-const Customer = require("./customer");
+const Customer = require("./models/customer");
 
 const uri = process.env.MONGODB_URI;
 
@@ -63,7 +63,7 @@ async function run() {
       }
       case "4": {
         const id = prompt({
-          ask: "Copy and paste the id of the customer you would like to update here: ",
+          ask: "Copy and paste the id of the customer you would like to delete here: ",
         });
         await Customer.findByIdAndDelete(id);
         break;
