@@ -31,6 +31,19 @@ async function run() {
 
     switch (selection) {
       case "1": {
+        // TODO: implement customer creation
+        break;
+      }
+      case "2": {
+        // TODO: implement view all customers
+        break;
+      }
+      case "3": {
+        // TODO: implement update a customer
+        break;
+      }
+      case "4": {
+        // TODO: implement delete a customer
         break;
       }
       case "5": {
