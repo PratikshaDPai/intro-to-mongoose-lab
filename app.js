@@ -31,11 +31,15 @@ async function run() {
 
     switch (selection) {
       case "1": {
-        // TODO: implement customer creation
+        const name = prompt({ ask: "Enter the name: " });
+        const age = parseInt(prompt({ ask: "Enter the age: " }));
+        const customer = new Customer({ name, age });
+        await customer.save();
         break;
       }
       case "2": {
-        // TODO: implement view all customers
+        const customers = await Customer.find({});
+        console.log(customers);
         break;
       }
       case "3": {
