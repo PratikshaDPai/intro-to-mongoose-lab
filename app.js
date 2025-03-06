@@ -43,9 +43,7 @@ async function run() {
         console.log("\nBelow is a list of customers:\n");
         for (const customer of customers) {
           console.log(
-            `id: ${customer._id.toString()} -- Name: ${customer.name}, Age: ${
-              customer.age
-            }`
+            `id: ${customer._id} -- Name: ${customer.name}, Age: ${customer.age}`
           );
         }
         console.log(); // add an extra newline for formatting
